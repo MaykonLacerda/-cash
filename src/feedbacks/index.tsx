@@ -11,7 +11,7 @@ export const Feedbacks = () => {
   const defaultApiError = (error: AxiosError) => {
     const type = 'error';
 
-    switch (error.status) {
+    switch (error.response?.status) {
       case 500:
         toast(
           'Estamos com problemas em nossos servidores. Por favor, tente novamente.',
