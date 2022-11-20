@@ -1,8 +1,9 @@
 import { AppRoutes } from 'routes';
+import './assets/styles/global.css';
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <AppRoutes />
     </div>
   );
