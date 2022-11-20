@@ -1,3 +1,4 @@
+import { TEXT } from 'constants/messages';
 import { InputHTMLAttributes } from 'react';
 import './styles.css';
 
@@ -9,7 +10,7 @@ export function Input({ label, ...props }: InputProps) {
   return (
     <label className="text-field-component">
       {label}
-      <input {...props} />
+      <input {...props} placeholder={TEXT.DefaultInputPlaceholder} />
     </label>
   );
 }
