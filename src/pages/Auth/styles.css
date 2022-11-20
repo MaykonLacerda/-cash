@@ -1,0 +1,9 @@
+.register-page .button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.register-page .button-group button {
+  width: 100%;
+}

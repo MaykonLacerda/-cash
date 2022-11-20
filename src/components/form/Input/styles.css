@@ -1,0 +1,12 @@
+.text-field-component {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  margin: 0.8rem 0;
+}
+
+.text-field-component > input {
+  padding: 0.4rem;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+}
