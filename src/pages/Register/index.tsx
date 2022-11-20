@@ -8,7 +8,7 @@ import { UserService } from 'services/UserService';
 import { RegisterUserDTO } from 'services/UserService/dtos';
 import './styles.css';
 
-export function Auth() {
+export function Register() {
   const { handleSubmit, control } = useForm<RegisterUserDTO>();
   const navigate = useNavigate();
   const userService = UserService();
