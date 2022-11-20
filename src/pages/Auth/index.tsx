@@ -1,20 +1,26 @@
 import { useForm, Controller } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'components/form/Button';
 import { Input } from 'components/form/Input';
 import { Title } from 'components/typography/Title';
+import { Feedbacks } from 'feedbacks';
 import { UserService } from 'services/UserService';
 import { RegisterUserDTO } from 'services/UserService/dtos';
 import './styles.css';
 
 export function Auth() {
   const { handleSubmit, control } = useForm<RegisterUserDTO>();
+  const navigate = useNavigate();
   const userService = UserService();
+  const { success, defaultApiError } = Feedbacks();
 
   const onSubmit = async (data: RegisterUserDTO) => {
     try {
       await userService.register(data);
+      success('Usuário registrado com sucesso!');
+      navigate('/login');
     } catch (error) {
-      console.log(error);
+      defaultApiError(error);
     }
   };
 
@@ -25,16 +31,16 @@ export function Auth() {
         <Controller
           name="username"
           control={control}
-          render={({ field }) => <Input label="Usuário:" {...field} />}
+          render={({ field }) => <Input required label="Usuário:" {...field} />}
         />
         <Controller
           name="password"
           control={control}
-          render={({ field }) => <Input label="Senha:" {...field} />}
+          render={({ field }) => <Input required label="Senha:" {...field} />}
         />
         <div className="button-group">
           <Button>Salvar</Button>
-          <Button>Fazer login</Button>
+          <Button onClick={() => navigate('/login')}>Já tenho uma conta</Button>
         </div>
       </form>
     </div>
