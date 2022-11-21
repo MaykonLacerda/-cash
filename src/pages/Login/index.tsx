@@ -4,23 +4,21 @@ import { Title } from 'components/typography/Title';
 import { Feedbacks } from 'feedbacks';
 import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { AuthService } from 'services/AuthService';
-import { AuthenticateDTO } from 'services/AuthService/dtos';
-import './styles.css';
+import { useAuthService } from 'hooks/services/useAuthService';
+import { AuthenticateDTO } from 'hooks/services/useAuthService/dtos';
 
 export function Login() {
   const navigate = useNavigate();
   const { handleSubmit, control } = useForm<AuthenticateDTO>();
-  const authService = AuthService();
+  const authService = useAuthService();
   const { success, defaultApiError } = Feedbacks();
 
   const onSubmit = async (body: AuthenticateDTO) => {
     try {
-      const { data } = await authService.login(body);
-
-      authService.setToken(data.token);
+      await authService.login(body);
 
       success('Login realizado com sucesso.');
+      navigate('/');
     } catch (error) {
       defaultApiError(error);
     }

@@ -14,6 +14,20 @@ body {
   border-radius: 1em;
 }
 
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  display: flex;
+  text-align: center;
+  gap: 1rem;
+
+}
+
+.button-group button {
+  width: 100%;
+}
+
 a:link,
 a:visited {
   color: #38488f;
