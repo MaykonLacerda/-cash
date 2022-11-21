@@ -1,0 +1,38 @@
+.transaction-table {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+
+.transaction-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #808080;
+  margin-top: 1rem;
+}
+
+.transaction-table .header {
+  font-weight: 700;
+  color: #272727;
+  border-bottom: 1px solid #808080;
+}
+
+.transaction-table .body {
+  font-size: 0.96rem;
+  color: #272727;
+}
+
+.transaction-table td {
+  padding: 0.3rem 0.6rem;
+}
+
+.transaction-table .no-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #808080;
+  border-top: none;
+  color: #272727;
+  padding: 1rem;
+}
