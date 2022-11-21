@@ -1,0 +1,19 @@
+.home-page .logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  text-decoration: underline;
+}
+
+.home-page .current-balance {
+  border: 1px solid;
+  padding: 0 1rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.home-page .current-balance span {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
