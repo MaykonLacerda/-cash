@@ -4,14 +4,13 @@ import { Button } from 'components/form/Button';
 import { Input } from 'components/form/Input';
 import { Title } from 'components/typography/Title';
 import { Feedbacks } from 'feedbacks';
-import { UserService } from 'services/UserService';
-import { RegisterUserDTO } from 'services/UserService/dtos';
-import './styles.css';
+import { useUserService } from 'hooks/services/useUserService';
+import { RegisterUserDTO } from 'hooks/services/useUserService/dtos';
 
 export function Register() {
   const { handleSubmit, control } = useForm<RegisterUserDTO>();
   const navigate = useNavigate();
-  const userService = UserService();
+  const userService = useUserService();
   const { success, defaultApiError } = Feedbacks();
 
   const onSubmit = async (data: RegisterUserDTO) => {
